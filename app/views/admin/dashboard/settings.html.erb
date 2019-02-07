@@ -1,0 +1,227 @@
+<div class="breadcomb-area">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div style="background-color: #fff; padding: 15px; height: 100%; display: block;">
+              <form action="/admin/save_settings" method="POST">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="nk-int-mk sl-dp-mn mg-t-30">
+                          <h2>Risk Group</h2>
+                        </div>
+                        <div class="bootstrap-select">
+                          <select class="selectpicker" multiple="true" name="risk_group[]">
+                            <% ['Conservative', 'Medium conservative', 'Balanced', 'Medium agressive', 'Aggresive'].each do |group| %>
+                              <option value="<%= group %>"><%= group %></option>
+                            <% end %>
+                          </select><br><br><br><br><br><br><br><br><br><br><br><br>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                          <h4 style="margin-left: 10px;">Additional settings <span class="caret"></span></h4>
+                        </a>
+                        <div class="collapse" id="collapseExample">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="nk-int-mk sl-dp-mn mg-t-30">
+                                <h2>Investment Purposes</h2>
+                              </div>
+                              <div class="bootstrap-select">
+                                <select class="selectpicker" multiple="true" name="categories[]">
+                                  <% ['Phone', 'TV', 'Wash machine', 'AC', 'Other electronics', 'Agriculture equipment'].each do |c| %>
+                                  <option value="<%= c %>"><%= c %></option>
+                                  <% end %>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="card card-body">
+                                <div class="nk-int-mk sl-dp-mn mg-t-30">
+                                  <h2>Countries</h2>
+                                </div>
+                                <div class="bootstrap-select">
+                                  <select class="selectpicker" multiple="true" name="risk_group[]">
+                                    <% ['Egypt', 'Kazakhstan', 'Pakistan', 'Tajikistan', 'Uzbekistan'].each do |group| %>
+                                      <option value="<%= group %>"><%= group %></option>
+                                    <% end %>
+                                  </select>
+                                </div>
+                              </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="themesaller-forms mg-t-30">
+                                <div class="spacer-b16a">
+                                  <!-- <label for="age">Age:</label> -->
+                                  <div class="nk-int-mk sl-dp-mn mg-t-30">
+                                    <h2>Age</h2>
+                                  </div>
+
+                                  <input type="text" id="age" class="slider-input" style="margin-left: 10px; margin-bottom: 10px;">
+                                  <input type="text" id="age_start" name="age_start" class="slider-input" style="display: none;">
+                                  <input type="text" id="age_end" name="age_end" class="slider-input" style="display: none;">
+                                </div>
+                                <div class="slider-wrapper purple-slider">
+                                  <div
+                                    id="slider80"
+                                    data-age-start=<%= User.where(role: 'investor').first.years_start %>
+                                    data-age-end=<%= User.where(role: 'investor').first.years_end %>
+                                  ></div>
+                                </div>
+                              </div>
+
+                              <div class="nk-int-mk sl-dp-mn mg-t-30">
+                                <h2>Gender</h2>
+                              </div>
+                              <div class="col-lg-6">
+                                <div class="toggle-select-act fm-cmp-mg">
+                                  <div class="nk-toggle-switch">
+                                    <label for="ts1" class="ts-label">Male</label>
+                                    <input id="ts1" type="checkbox" name="male" <%= "checked" if User.where(role: 'investor').first.male %>>
+                                    <label for="ts1" class="ts-helper"></label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-lg-6">
+                                <div class="toggle-select-act fm-cmp-mg">
+                                  <div class="nk-toggle-switch">
+                                    <label for="ts2" class="ts-label">Female</label>
+                                    <input id="ts2" type="checkbox" name="female" <%= "checked" if User.where(role: 'investor').first.female %>>
+                                    <label for="ts2" class="ts-helper"></label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="nk-int-mk sl-dp-mn mg-t-30">
+                      <h2>Loan term</h2>
+                    </div>
+                    <div class="col-lg-6">
+                      <label for="3m">3m</label>
+                      <input type="radio" name="loan_term">
+                      <label for="6m">/ 6m</label>
+                      <input type="radio" name="loan_term">
+                      <label for="6m">/ 1yr</label>
+                      <input type="radio" name="loan_term">
+                      <label for="6m">/ 1.5yr</label>
+                      <input type="radio" name="loan_term">
+                    </div><br><br>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="nk-int-mk sl-dp-mn mg-t-30">
+                          <h2>Buyback guarantee</h2>
+                        </div>
+                        <div class="col-lg-12">
+                          <label for="3m">Yes</label>
+                          <input type="radio" name="buyback">
+                          <label for="6m">/ No</label>
+                          <input type="radio" name="buyback">
+                        </div>
+                        <br>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="nk-int-mk sl-dp-mn mg-t-30">
+                          <h2>Automatically reinvest</h2>
+                        </div>
+                        <div class="col-lg-12">
+                          <label for="3m">Yes</label>
+                          <input type="radio" name="autoinvest">
+                          <label for="6m">/ No</label>
+                          <input type="radio" name="autoinvest">
+                        </div>
+                      </div>
+
+                        <div class="col-md-12">
+                          <div class="themesaller-forms mg-t-30">
+          									<div class="spacer-b16a">
+          										<label for="budget" style="font-weight: 700; font-size: 16px; font-family: Helvetica Neue,Helvetica,Arial,sans-serif; margin-left: 10px;">Max. Investment:</label>
+          										<input type="text" id="budget" name="income_start" class="slider-input">
+          										<input type="text" id="income_start" name="income_start" class="slider-input" style="display: none;">
+          										<input type="text" id="income_end" name="income_end" class="slider-input" style="display: none;">
+          									</div>
+                            <br>
+                            <br>
+          									<div class="slider-wrapper purple-slider">
+            										<div
+                                  id="slider8"
+                                  data-income-start=<%= User.where(role: 'investor').first.income_start %>
+                                  data-income-end=<%= User.where(role: 'investor').first.income_end %>
+                                ></div>
+          									</div>
+          								</div>
+                        </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="row">
+                      <div class="col-md-6 col-md-offset-6 text-center">
+                        <div class="themesaller-forms mg-t-30">
+                          <h4>Recommended minumum return by IMAN (in UZS)</h4>
+                          <br>
+                          <h3>27%</h3>
+                          <br><br>
+                          <h5>Buyback guarantee</h5>
+                          <div class="col-lg-12 text-left">
+                            <input type="radio" name="buyback_2">
+                            <label for="3m">Accept this minimum return</label>
+                            <br>
+                            <input type="radio" name="buyback_2">
+                            <label for="6m">Specify different minimum return</label>
+                          </div>
+        									<!-- <div class="spacer-b16a">
+        										<label for="age">Age:</label>
+        										<input type="text" id="age" class="slider-input">
+        										<input type="text" id="age_start" name="age_start" class="slider-input" style="display: none;">
+        										<input type="text" id="age_end" name="age_end" class="slider-input" style="display: none;">
+        									</div> -->
+                          <!-- <br>
+                          <br>
+        									<div class="slider-wrapper purple-slider">
+        										<div
+                              id="slider80"
+                              data-age-start=<%= User.where(role: 'investor').first.years_start %>
+                              data-age-end=<%= User.where(role: 'investor').first.years_end %>
+                            ></div> -->
+        									</div>
+        								</div>
+                      </div>
+                      <div class="col-md-12">
+                        <!-- <div class="themesaller-forms mg-t-30">
+        									<div class="spacer-b16a">
+        										<label for="credit_score">Credit score:</label>
+        										<input type="text" id="credit_score" class="slider-input">
+        										<input type="text" id="credit_score_start" name="credit_score_start" class="slider-input" style="display: none;">
+        										<input type="text" id="credit_score_end" name="credit_score_end" class="slider-input" style="display: none;">
+        									</div>
+                          <br>
+                          <br>
+        									<div class="slider-wrapper purple-slider">
+        										<div
+                              id="slider800"
+                              data-credit-score-start=<%= User.where(role: 'investor').first.credit_score_start %>
+                              data-credit-score-end=<%= User.where(role: 'investor').first.credit_score_end %>
+                            ></div>
+        									</div> -->
+        								</div><br><br>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-2 col-md-offset-10">
+                        <button type="submit" class="btn btn-primary btn-block">Save</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+              </form>
+              </div>
+            </div>
+          </div>
+      </div>
+  </div>
+</div>

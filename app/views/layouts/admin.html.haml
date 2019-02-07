@@ -1,0 +1,60 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Imanstore
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'admin/admin', media: 'all'
+    = javascript_include_tag 'admin/admin'
+
+  %body
+    = custom_bootstrap_flash
+    .header-top-area
+      .container
+        .row
+          .col-lg-5.col-md-4.col-sm-12.col-xs-12
+            .logo-area
+              %a{:href => "/admin"}
+                = image_tag 'Logo.png', style: 'width: 60px;'
+          .col-lg-7.col-md-8.col-sm-12.col-xs-12
+            .header-top-menu
+              %ul.nav.navbar-nav
+                %li.nav-item
+                  %a.nav-link{href:"/"} Shop
+                %li.nav-item
+                  %a.nav-link{href:'#'} Invest
+              %ul.nav.navbar-nav.notika-top-nav
+                %li.nav-item.dropdown
+                  %a.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+                    Welcome investor
+                %li.nav-item.dropdown
+                  = link_to destroy_user_session_path, method: :delete do
+                    Log Out
+                  -# %span
+
+    / Main Menu area start
+    .main-menu-area.mg-tb-40
+      .container
+        .row
+          .col-lg-12.col-md-12.col-sm-12.col-xs-12
+            %ul.nav.nav-tabs.notika-menu-wrap.menu-it-icon-pro
+
+            .tab-content.custom-menu-content
+              #Home.tab-pane.in.notika-tab-menu-bg.animated.flipInX.active
+                %ul.notika-main-menu-dropdown.text-center
+                  %li
+                    %a{:href => "/admin"} Dashboard
+                  %li
+                    %a{:href => "/admin/manual"} Manual invest
+                  %li
+                    %a{:href => "/admin/settings"} Auto invest
+                  -# %li
+                  -#   %a{:href => "/admin/settings"} Loan settings
+                  %li
+                    %a{:href => "/admin/deposit"} Deposit/Withdrawal
+                  %li
+                    %b{style: 'padding: 20px 20px; display: block; font-size: 14px; color: rgb(56, 102, 223);'} Balance: $10 000
+
+    -# / Main Menu area End
+    = yield

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  months: 1
+  percent: 1
+  loan: one
+
+two:
+  months: 1
+  percent: 1
+  loan: two

@@ -1,0 +1,227 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <h4>Overview:</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4">
+        <div class="dialog-inner dialog-inner-height">
+            <div class="contact-hd dialog-hd">
+                <h3>
+                  Account Balance
+                </h3>
+                <h2>$10,000</h2>
+                <br>
+                <table class='table'>
+                  <tr>
+                    <td>Available Funds</td>
+                    <td>$28,19</td>
+                  </tr>
+                  <tr>
+                    <td>Invested funds</td>
+                    <td>$9976.90</td>
+                  </tr>
+                </table>
+                <%= image_tag 'admin/pie.png', class: 'img-fluid' %>
+            </div>
+            <div class="dialog-pro dialog" style="margin-top: 51px;">
+              <button class="btn btn-info btn-block" style="margin: 0 auto; display: block;" id="sa-basic">Add funds</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="dialog-inner dialog-inner-height">
+            <div class="contact-hd dialog-hd">
+                <h3>Net annual return</h3>
+                <h2>13,21%</h2>
+                <br>
+                <table class='table'>
+                  <tr>
+                    <td>Interest</td>
+                    <td>$594,60</td>
+                  </tr>
+                  <tr>
+                    <td>Late Payment Fees</td>
+                    <td>$2.60</td>
+                  </tr>
+                  <tr>
+                    <td>Bad Debt</td>
+                    <td>$0.00</td>
+                  </tr>
+                  <tr>
+                    <td>Secondary Market Transactions</td>
+                    <td>$-0.13</td>
+                  </tr>
+                  <tr>
+                    <td>Service Fees</td>
+                    <td>$0.00</td>
+                  </tr>
+                  <tr>
+                    <td>Campaign Rewards</td>
+                    <td>$408.02</td>
+                  </tr>
+                </table>
+                <table class="table">
+                  <tr>
+                    <th>Total Profit</th>
+                    <th>$1 005.10</th>
+                  </tr>
+                </table>
+            </div><br><br><br><br><br>
+            <div class="dialog-pro dialog">
+                <button class="btn btn-info btn-block" style="margin: 0 auto; display: block;" id="sa-basic">Invest</button>
+                <p class='text-muted text-center' style='font-size: 12px; margin-top: 5px; margin-bottom: 0px;'>76902 Loans Available</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="dialog-inner dialog-inner-height">
+            <div class="contact-hd dialog-hd">
+                <h3>My Investments</h3>
+                <h2>157</h2><br>
+                <div class="tab-content" id="myTabContent">
+                  <div class="tab-pane fade active in tab-pane-height" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <table class='table'>
+                      <tr>
+                        <td>Current</td>
+                        <td>$6 630.09</td>
+                      </tr>
+                      <tr>
+                        <td>Grace Period</td>
+                        <td>$234.49</td>
+                      </tr>
+                      <tr>
+                        <td>1-15 Days Late</td>
+                        <td>$658.58</td>
+                      </tr>
+                      <tr>
+                        <td>16-30 Days Late</td>
+                        <td>$1 041.16</td>
+                      </tr>
+                      <tr>
+                        <td>31-60 Days Late</td>
+                        <td>$412.58</td>
+                      </tr>
+                      <tr>
+                        <td>60+ Days Late</td>
+                        <td>$0.00</td>
+                      </tr>
+                      <tr>
+                        <td>Default</td>
+                        <td>$0.00</td>
+                      </tr>
+                      <tr>
+                        <td>Bad Debt</td>
+                        <td>($0.00)</td>
+                      </tr>
+                    </table>
+                    <table class="table">
+                      <tr>
+                        <th>Total</th>
+                        <th>$8 976.90</th>
+                      </tr>
+                    </table>
+                  </div><br>
+                </div>
+                <br>
+                <div class="dialog-pro dialog">
+                  <button class="btn btn-info btn-block" style="margin: 0 auto; display: block;" id="sa-basic">Get Account Statement</button>
+                </div>
+                <br>
+                <div style="color: rgb(56, 102, 223)">
+                  <input type="radio" name='a' id='a'>
+                  <label for="a">By Amount</label>
+                  <input type="radio" name='a' id='b'>
+                  <label for="b">By Number</label>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+<!-- Breadcomb area End-->
+  <!-- Bar Chart area End-->
+  <!-- <div class="area-chart-area">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <div class="area-chart-wp mg-t-30">
+                      <canvas height="140vh" width="180vw" id="areachartfillstart"></canvas>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div> -->
+  <br>
+  <br>
+  <br>
+  <!-- Bar Chart area End-->
+  <!-- Data Table area Start-->
+    <div class="data-table-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="data-table-list">
+                        <div class="basic-tb-hd">
+                            <h2>My Investments</h2>
+                            <p> Here you can see all your current investments and put them for sale in secondary market. </p>
+                        </div>
+                        <div class="table-responsive">
+                            <table id="data-table-basic" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Date of Purchase</th>
+                                        <th>My Investment</th>
+                                        <th>Loan Type</th>
+                                        <th>Risk group</th>
+                                        <th>Next Payment</th>
+                                        <th>Interest Rate</th>
+                                        <th>Term</th>
+                                        <th>Received payments</th>
+                                        <th>Outstanding Pricipal</th>
+                                        <th><button class="btn btn-info btn-inverse">Sell All</button></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  <% 15.times do %>
+                                    <tr>
+                                      <td><%= rand(10000..99999) %></td>
+                                      <td><%= Date.today - rand(100..500).days %></td>
+                                      <td>$<%= rand(10..300) %>.00</td>
+                                      <td><%= rand(0..1) > 1 ? 'Mortgage Loan' : 'Business Loan' %></td>
+                                      <td><%= Array('A'..'E')[rand(0..4)] %></td>
+                                      <td><%= Date.today - rand(1..30).days %></td>
+                                      <td><%= rand(8..15).to_f %>%</td>
+                                      <td><%= rand(3..20) %>m <%= rand(1..30) %>d</td>
+                                      <td>$0.00</td>
+                                      <td>$10.00</td>
+                                      <td><a href="#" class="btn btn-info btn-inverse">Sell</a></td>
+                                    </tr>
+                                  <% end %>
+
+                                </tbody>
+                                <tfoot>
+                                  <tr>
+                                      <th>ID</th>
+                                      <th>Date of Purchase</th>
+                                      <th>My Investment</th>
+                                      <th>Loan Type</th>
+                                      <th>Next Payment</th>
+                                      <th>Estimated Next Payment</th>
+                                      <th>Interest Rate</th>
+                                      <th>Term</th>
+                                      <th>Received payments</th>
+                                      <th>Outstanding Pricipal</th>
+                                      <th><button class="btn btn-info btn-inverse">Sell All</button></th>
+                                  </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Data Table area End-->
