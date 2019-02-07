@@ -1,0 +1,62 @@
+<div class="data-table-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="data-table-list">
+                    <div class="basic-tb-hd">
+                        <h2>Manual investments:</h2>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="data-table-basic" class="table table-striped">
+                            <thead>
+                              <tr>
+                                <th>ID</th>
+                                <th>Issue Date</th>
+                                <th>Loan Type</th>
+                                <th>Risk Group</th>
+                                <th>Loan Amoun/Balance</th>
+                                <th>Interest Rate</th>
+                                <th>Term</th>
+                                <th>Available for Investment</th>
+                                <th></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <% 20.times do %>
+                                <tr>
+                                  <td><%= rand(10000..99999) %></td>
+                                  <td><%= Date.today - rand(5..30).days %></td>
+                                  <td>
+                                    <%= loan_type %>
+                                  </td>
+                                  <td><%= Array('A'..'E')[rand(0..4)] %></td>
+                                  <td><% a = rand(600..30000) %> <span class="text-muted">$<%= a %> /</span><br><span>$<%= (a - rand(0.500)).to_i %></span></td>
+                                  <td><%= rand((8.0)..(15.0)).to_f.round(2)%>%</td>
+                                  <td><%= rand(3..20) %>m <%= rand(1..30) %>d</td>
+                                  <td>$<%= rand(300..2000) %></td>
+                                  <td><a href="#" class="btn btn-info btn-inverse">Invest</a></td>
+                                </tr>
+                              <% end %>
+
+                            </tbody>
+                            <tfoot>
+                              <tr>
+                                <th>ID</th>
+                                <th>Issue Date</th>
+                                <th>Loan Type</th>
+                                <th>Risk Group</th>
+                                <th>Loan Amoun/Balance</th>
+                                <th>Interest Rate</th>
+                                <th>Term</th>
+                                <th>Available for Investment</th>
+                                <th></th>
+                              </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Data Table area End-->

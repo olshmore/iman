@@ -1,0 +1,33 @@
+/*
+  //= require_tree .
+*/
+
+
+.dropdown-menu { display: block !important; }
+@import "font-awesome";
+@import "toastr";
+
+// .nav>li>a:focus, .nav>li>a:hover {
+//   background-color: #f6e928;
+// }
+
+.nav-tabs>li>a:hover {
+  color: rgb(56, 102, 223);
+}
+
+.dialog-inner-height {
+  min-height: 630px;
+}
+
+.tab-pane-height {
+  height: 350px;
+}
+
+.nav-pills>li>a {
+  padding: 4px 8px !important;
+  font-size: 12px;
+  margin-bottom: 18px;
+}
+.nav-pills>li>a:hover {
+  color: #1d73bc;
+}

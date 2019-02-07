@@ -1,0 +1,17 @@
+//= require admin/vendor/jquery-1.12.4.min.js
+//= require jquery_ujs
+//= require toastr
+//= require admin/bootstrap.min.js
+//= require admin/bootstrap-select/bootstrap-select.js
+//= require admin/wow.min.js
+//= require admin/jquery-price-slider.js
+//= require admin/rangle-slider/jquery-ui-1.10.4.custom.min.js
+//= require admin/rangle-slider/jquery-ui-touch-punch.min.js
+//= require admin/rangle-slider/rangle-active.js
+//= require admin/knob/knob-active.js
+//= require admin/plugins.js
+//= require admin/main.js
+//= require admin/charts/Chart.js
+//= require admin/charts/area-chart.js
+//= require admin/data-table/jquery.dataTables.min.js
+//= require admin/data-table/data-table-act.js

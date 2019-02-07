@@ -1,0 +1,11 @@
+.account_menu_item {
+  padding: 15px;
+}
+.account_menu_item:hover, .account_menu_item.active {
+  background-color: #fff;
+  font-weight: bold;
+}
+
+th {
+  font-weight: bold;
+}

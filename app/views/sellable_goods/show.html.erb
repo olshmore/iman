@@ -1,0 +1,336 @@
+<div id="wrapper" class="jsx-370875650">
+  <div id="content" class="jsx-370875650">
+     <div class="jsx-370875650 pageWrapper">
+        <div class="jsx-1552065615 jsx-3349621030 container">
+           <div class="jsx-1552065615 jsx-3349621030 breadcrumbContainer">
+              <div class="jsx-1552065615 jsx-3349621030 siteWidthContainer">
+                 <div class="jsx-447347517 breadcrumb ">
+                   <a class="jsx-447347517 crumb" href="/">Home</a>
+                   <a class="jsx-447347517 crumb" href="#">
+                     <%= @product.category.name %>
+                   </a>
+              </div>
+           </div>
+           <div class="jsx-1552065615 jsx-3349621030 coreProductDetails">
+              <div class="jsx-1552065615 jsx-3349621030 siteWidthContainer">
+                 <div class="jsx-1552065615 jsx-3349621030 primaryDetails">
+                    <div class="jsx-1552065615 jsx-3349621030 imageGalleryWrapper">
+                       <div class="jsx-2089209145 container container">
+                          <div id="thumbnailsContainer" class="jsx-2089209145 thumbnailsContainer ">
+                             <div id="thumbnailsSlider" class="jsx-2089209145 ">
+                               <%- @product.sellable_good_images.each do |image| %>
+                                  <div class="jsx-2089209145 thumbnail selected">
+                                     <div class="jsx-2089209145 imageSlide">
+                                        <div class="jsx-3461008014">
+                                           <div class="mediaContainer" style='width: 100%'><img src="<%= image.url.url %>" alt="imageGallery" class="jsx-2089209145"/></div>
+                                        </div>
+                                     </div>
+                                  </div>
+                                <% end %>
+                             </div>
+                          </div>
+                          <div class="jsx-2089209145 standardSlider">
+                             <div class="swiper-container">
+                               <div class="swiper-wrapper">
+                                <%- @product.sellable_good_images.each do |image| %>
+                                  <div class="swiper-slide jsx-2089209145">
+                                    <div style="padding-bottom:100%" class="jsx-3461008014 container">
+                                      <div class="jsx-3461008014 mediaContainer" style="width: 100%;">
+                                        <div class="jsx-2089209145">
+                                          <img src="<%= image.url.url %>" alt="imageGalleryImg" class="jsx-2089209145 pdpImage" style="width: 100%">
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                <% end %>
+                                </div>
+                             </div>
+                          </div>
+                          <div id="enlargedTarget" class="jsx-2089209145 enlargedTargetContainer"></div>
+                       </div>
+                    </div>
+                    <div class="jsx-1552065615 jsx-3349621030 coreWrapper">
+                       <div class="jsx-3603801110">
+                          <a class="jsx-3603801110 brand" href="#"><%= @product.firm %></a>
+                          <h1 class="jsx-3603801110"><%= @product.name %></h1>
+                          <p class="jsx-3603801110 modelNumber">
+                             Model Number<!-- -->: <!-- -->M1803E6G
+                          </p>
+                          <div class="jsx-3603801110 reviewsBadgeContainer"></div>
+                          <div class="jsx-3603801110 priceFulfilmentRow">
+                             <div class="jsx-3603801110">
+                                <p class="jsx-3273035461 productPrice large">
+                                  <span class="jsx-3273035461 sellingPrice">UZS <%= @product.price %>0</span>
+                                </p>
+                                <p class="jsx-3603801110 vatNote">Inclusive of VAT</p>
+                             </div>
+                             <div>
+                                <div class="jsx-2963792684 container">
+                                   <img src="https://k.nooncdn.com/s/app/2018/com-www-bigalog/BBHZDWoQivVkyBJi84efg/static/images/noon-now-en.svg" alt="noon-now" class="jsx-2963792684 "/>
+                                   <div class="jsx-2963792684 tooltipWrapper"><button aria-label="Help" class="jsx-2963792684 tooltipTrigger"><i class="icon icon-help-o " style="color:;font-size:"></i></button></div>
+                                </div>
+                             </div>
+                          </div>
+                          <div class="jsx-3603801110 variationsRow">
+                             <div class="jsx-3603801110 variantContainer">
+                                <div class="jsx-365894915">
+                                   <label class="jsx-365894915">Size</label>
+                                   <div class="Select has-value is-disabled Select--single">
+                                      <div class="Select-control">
+                                         <div class="Select-multi-value-wrapper" id="react-select-540728--value">
+                                            <div class="Select-value"><span class="Select-value-label" role="option" aria-selected="true" id="react-select-540728--value-item">32 GB</span></div>
+                                            <div aria-expanded="false" aria-owns="" aria-activedescendant="react-select-540728--value" aria-disabled="true" class="Select-input" role="combobox" style="border:0;width:1px;display:inline-block" tabindex="0"></div>
+                                         </div>
+                                         <span class="Select-arrow-zone"><span class="Select-arrow"></span></span>
+                                      </div>
+                                   </div>
+                                </div>
+                             </div>
+                             <div class="jsx-3603801110 variantContainer">
+                                <div class="jsx-365894915">
+                                   <label class="jsx-365894915">Color</label>
+                                   <div class="Select has-value Select--single">
+                                      <div class="Select-control">
+                                         <div class="Select-multi-value-wrapper" id="react-select-540729--value">
+                                            <div class="Select-value"><span class="Select-value-label" role="option" aria-selected="true" id="react-select-540729--value-item">Black</span></div>
+                                            <div aria-expanded="false" aria-owns="" aria-activedescendant="react-select-540729--value" aria-disabled="false" class="Select-input" role="combobox" style="border:0;width:1px;display:inline-block" tabindex="0"></div>
+                                         </div>
+                                         <span class="Select-arrow-zone"><span class="Select-arrow"></span></span>
+                                      </div>
+                                   </div>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                       <div class="jsx-1552065615 jsx-3349621030 ">
+                          <div class="jsx-1552065615 jsx-3349621030 pdpCtaContainer" style="width: 100%;">
+                             <button class="jsx-3297656512 jsx-3349621030 ripple " style="margin-right: 15px; background: black;">
+                               <span class="addToCartLabel">Buy now</span>
+                             </button>
+                             <a href="#" class="modal_open1 jsx-3297656512 jsx-3349621030 ripple" style='display: inline-block;'>
+                               <span class="addToCartLabel " style="padding: 15px 50px; display: block;">Buy with Iman</span>
+                             </a>
+                             <div id="ex2" class="modal modal2" style="background-color: #fcf7f7; width: 500px;">
+                               <p class="text-muted">Step 2 of 3:</p>
+                               <h1 style="font-size: 18px; font-weight: bold;">You're approved for $2,347.44! </h1>
+                               <p>Carefully review the details of your loan below.</p>
+                               <div class="modal_open2">
+                                 <br>
+                                 <h3>$391.24/mo for 6 months.</h3>
+                                 <hr><br>
+                                 <table class="table table-bordered" style="width: 100%">
+                                   <tr>
+                                     <td class="text-muted">TOTAL INTEREST (0.00% APR)</td>
+                                     <td>$0.00</td>
+                                   </tr>
+                                   <tr>
+                                     <td class="text-muted">TOTAL PAYMENTS</td>
+                                     <td>$2,347.44</td>
+                                   </tr>
+                                 </table>
+                                 <br>
+                                 <hr><br>
+                                 Your payments will be due each month starting on or after
+                                 <b>Mar 22, 2018.</b>
+                               </div><br>
+                               <div class="text-center" style="text-align: center;">
+                                 <a href="#" class="btn btn-success modal_open3">Continue</a><br><br>
+                                 <a href="#" rel="modal:close">Back</a>
+                               </div>
+                             </div>
+                             <div id="ex1" class="modal modal1" style="background-color: #fcf7f7; width: 400px;">
+                               <p class="text-muted">Step 1 of 3:</p>
+                               <h1 style="font-size: 18px; font-weight: bold;">You're approved for $2,347.44! </h1>
+                               <p>Choose the payment plan that works best for you. These are no hidden fees!</p>
+                               <div class="card modal_open2">
+                                 <h3>$391.24/mo for 6 months.</h3>
+                                 <br>
+                                 <p class="text-muted">INTEREST (0.00% APR)</p>
+                                 $0.00
+                               </div>
+                               <div class="card">
+                                 <h3>$211.88/mo for 12 months.</h3>
+                                 <br>
+                                 <p class="text-muted">INTEREST (15.09% APR)</p>
+                                 $196.47
+                               </div>
+                               <div class="card">
+                                 <h3>$146.44/mo for 18 months.</h3>
+                                 <br>
+                                 <p class="text-muted">INTEREST (15.12% APR)</p>
+                                 $291.26
+                               </div>
+                             </div>
+                             <div id="ex1" class="modal modal3" style="background-color: #fcf7f7; width: 400px;">
+                               <p class="text-muted">Step 3 of 3:</p>
+                               <h1 style="font-size: 18px; font-weight: bold;">Last step! </h1>
+                               <p>Please review the following information and confirm your loan.</p>
+                               <hr>
+                               <span>Loan ID: QBVQ0-32F</span><br><br>
+                               <span>Number of payments: 6</span><br><br>
+                               <span>Amount of each Payment - <b>$391.24</b></span><br><br>
+                               <span>Due monthly Starting - <b>3/22/18</b></span><br><br>
+                                <hr>
+                                <b>ANNUAL PERCENTAGE RATE: 0.00 APR</b>
+                                <br>
+                                <span>The cost of your credit as a yearly rate</span>
+                                <br><br>
+                                <input type="checkbox" checked>
+                                <label for="">I have reviewed and agreed to the <a href="#">Truth in Lending Disclosure</a> and <a href="#">Loan Agreement</a> and the refund policy provided by Purple, and have received the <a href="#">Credit Score Disclosure </a>.</label><br><br>
+                                <input type="checkbox" checked>
+                                <label for="">Enable autopay.  If you enable autopay, we will automatically debit your monthly payment amount from your payment method on each due date</label><br><br>
+                                <div class="text-center" style="text-align: center;">
+                                  <%= link_to "Confirm Loan", "/buy/#{@product.id}", method: :post, class: 'btn btn-success' %><br><br>
+                                  <a href="#" rel="modal:close">Back</a>
+                                </div>
+                             </div>
+
+                             <!-- <%= link_to "/buy/#{@product.id}", method: :post, class: 'jsx-3297656512 jsx-3349621030 ripple', style: 'display: inline-block;' do %>
+                                   <span class="addToCartLabel " style="padding: 15px 50px; display: block;">Buy with Iman</span>
+                             <% end %> -->
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="jsx-1552065615 jsx-3349621030 secondaryDetails">
+                    <div class="jsx-1552065615 jsx-3349621030 panel">
+                       <div class="jsx-513374126 container">
+                          <div class="jsx-513374126 infoBlocksRow">
+                             <div class="jsx-513374126 infoBlock">
+                                <p class="jsx-513374126 itemInfo"><i class="icon icon-medal-o " style="color:;font-size:"></i>2 year warranty</p>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                    <div class="jsx-1552065615 jsx-3349621030 panel">
+                       <ul class="jsx-2655664902 usps">
+                          <li class="jsx-2655664902 uspContainer">
+                             <i class="icon icon-truck uspIcon" style="color:;font-size:"></i>
+                             <div class="jsx-2655664902 textContent"><span class="jsx-2655664902 title">Trusted Shipping</span><span class="jsx-2655664902 tagline">Free shipping when you spend 100 UZS and above</span></div>
+                          </li>
+                          <li class="jsx-2655664902 uspContainer">
+                             <i class="icon icon-return-arrow uspIcon" style="color:;font-size:"></i>
+                             <div class="jsx-2655664902 textContent"><span class="jsx-2655664902 title">Easy Returns</span><span class="jsx-2655664902 tagline">Free returns on eligible items so you can shop with ease</span></div>
+                          </li>
+                          <li class="jsx-2655664902 uspContainer">
+                             <i class="icon icon-medal-o uspIcon" style="color:;font-size:"></i>
+                             <div class="jsx-2655664902 textContent"><span class="jsx-2655664902 title">Always Authentic</span><span class="jsx-2655664902 tagline">We only sell 100% authentic products</span></div>
+                          </li>
+                          <li class="jsx-2655664902 uspContainer">
+                             <i class="icon icon-lock-o uspIcon" style="color:;font-size:"></i>
+                             <div class="jsx-2655664902 textContent"><span class="jsx-2655664902 title">Secure Shopping</span><span class="jsx-2655664902 tagline">Your data is always protected</span></div>
+                          </li>
+                       </ul>
+                    </div>
+                 </div>
+              </div>
+           </div>
+           <div class="jsx-1552065615 jsx-3349621030 panel detailsArea">
+              <div class="jsx-1552065615 jsx-3349621030 siteWidthContainer">
+                 <div name="productDetails">
+                    <div class="react-tabs" data-tabs="true">
+                       <ul class="subNav" role="tablist">
+                          <li class="react-tabs__tab react-tabs__tab--selected" role="tab" id="react-tabs-2408722" aria-selected="true" aria-disabled="false" aria-controls="react-tabs-2408723" tabindex="0">Overview</li>
+                          <li class="react-tabs__tab" role="tab" id="react-tabs-2408724" aria-selected="false" aria-disabled="false" aria-controls="react-tabs-2408725">Specifications</li>
+                       </ul>
+                       <div class="react-tabs__tab-panel react-tabs__tab-panel--selected" role="tabpanel" id="react-tabs-2408723" aria-labelledby="react-tabs-2408722">
+                          <div class="jsx-2085878247 container">
+                             <div class="jsx-2085878247 overviewSection">
+                                <p class="jsx-2085878247 sectionHeading">Highlights</p>
+                                <ul class="jsx-2085878247 highlights">
+                                   <li class="jsx-2085878247">Designed for the youth, and comes with a selfie camera designed to capture you at your best</li>
+                                   <li class="jsx-2085878247">Features a 16MP front camera and an LED Self-ie-light with 4500K temperature to simulate natural white light</li>
+                                   <li class="jsx-2085878247">Super pixel combines four pixels into a single large pixel</li>
+                                   <li class="jsx-2085878247">Leave no one out from group selfies with 79.8 degrees wide-angle lens</li>
+                                   <li class="jsx-2085878247">Electronic Image Stabilization on the dual rear camera setup to minimize blurring caused by hand jitters or other unsteady movements during video recording</li>
+                                </ul>
+                             </div>
+                          </div>
+                          <div class="jsx-3860617154 summaryContainer">
+                             <p class="jsx-3860617154 sectionHeading">Specifications</p>
+                             <div class="jsx-3860617154 specsRow">
+                                <div class="jsx-3860617154 groupContainer">
+                                   <table class="jsx-3860617154">
+                                      <tbody class="jsx-3860617154">
+                                         <tr class="jsx-3860617154">
+                                            <td class="jsx-3860617154">Colour</td>
+                                            <td class="jsx-3860617154">Black</td>
+                                         </tr>
+                                         <tr class="jsx-3860617154">
+                                            <td class="jsx-3860617154">Primary Camera</td>
+                                            <td class="jsx-3860617154">12 MP</td>
+                                         </tr>
+                                      </tbody>
+                                   </table>
+                                </div>
+                                <div class="jsx-3860617154 groupContainer">
+                                   <table class="jsx-3860617154">
+                                      <tbody class="jsx-3860617154">
+                                         <tr class="jsx-3860617154">
+                                            <td class="jsx-3860617154">Screen Size</td>
+                                            <td class="jsx-3860617154">5.99 inch</td>
+                                         </tr>
+                                         <tr class="jsx-3860617154">
+                                            <td class="jsx-3860617154">Product Weight</td>
+                                            <td class="jsx-3860617154">170 g</td>
+                                         </tr>
+                                      </tbody>
+                                   </table>
+                                </div>
+                             </div>
+                             <button aria-label="View More" class="jsx-3860617154 transparent">View More</button>
+                          </div>
+                       </div>
+                       <div class="react-tabs__tab-panel" role="tabpanel" id="react-tabs-2408725" aria-labelledby="react-tabs-2408724"></div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+           <div class="jsx-4103889291 jsx-3349621030">
+              <div class="jsx-3185237286">
+                 <div class="jsx-4103889291 jsx-3349621030"></div>
+              </div>
+              <div class="jsx-3185237286 panelContainer ">
+                 <div class="jsx-3185237286 scrim"></div>
+                 <div class="jsx-3185237286 panel">
+                    <header class="jsx-3185237286 floatyCircle"><button aria-label="Close" class="jsx-3185237286"><i class="icon icon-cross " style="color:;font-size:"></i></button></header>
+                    <div class="jsx-4103889291 jsx-3349621030">
+                       <div class="jsx-4103889291 jsx-3349621030 panel">
+                          <div class="jsx-4103889291 jsx-3349621030 cartTotalRow">
+                             <span class="jsx-4103889291 jsx-3349621030">
+                                <h1 class="jsx-4103889291 jsx-3349621030">Cart Total</h1>
+                             </span>
+                             <span class="jsx-4103889291 jsx-3349621030">
+                                <h1 class="jsx-4103889291 jsx-3349621030">UZS 0.00</h1>
+                             </span>
+                          </div>
+                          <div class="jsx-4103889291 jsx-3349621030 qcCtaContainer"><button class="jsx-4103889291 jsx-3349621030 ripple">  <span class="jsx-4103889291 jsx-3349621030 addedToCartLabel"><span class="jsx-4103889291 jsx-3349621030">Proceed to Checkout</span></span></button><button class="jsx-4103889291 jsx-3349621030 ripple continueShopping">  <span class="jsx-4103889291 jsx-3349621030 addedToCartLabel"><span class="jsx-4103889291 jsx-3349621030">Continue Shopping</span></span></button></div>
+                          <div class="jsx-4103889291 jsx-3349621030 productContainer">
+                             <div class="jsx-4103889291 jsx-3349621030 detailContainer">
+                                <span class="jsx-4103889291 jsx-3349621030 brand">Xiaomi</span>
+                                <h1 class="jsx-4103889291 jsx-3349621030">Redmi S2 Dual SIM Black 32GB 4G LTE (Middle East Specs)</h1>
+                                <p class="jsx-3273035461 productPrice large"><span class="jsx-3273035461"><span class="jsx-3273035461 preReductionPrice">UZS 629.00</span><span style="color:" class="jsx-3273035461 discountBadge"><span style="background:" class="jsx-3273035461 bg"></span>21% Off</span></span><span class="jsx-3273035461 sellingPrice">UZS 499.00</span></p>
+                             </div>
+                             <div class="jsx-4103889291 jsx-3349621030 imageContainer">
+                                <div style="padding-bottom:100%" class="jsx-3461008014 container">
+                                   <div class="jsx-3461008014 mediaContainer"><img src="https://k.nooncdn.com/t_desktop-thumbnail-v1/v1542093545/N15398060A_1.jpg" alt="productboxImg_v1542093545/N15398060A_1" class="jsx-4103889291 jsx-3349621030"/></div>
+                                </div>
+                             </div>
+                          </div>
+                          <div class="jsx-4103889291 jsx-3349621030 sellerFulfilmentRow">
+                             <span class="jsx-4103889291 jsx-3349621030">
+                                Sold by<!-- --> <strong class="jsx-4103889291 jsx-3349621030">noon</strong>
+                             </span>
+                             <div>
+                                <div class="jsx-2963792684 container"><img src="https://k.nooncdn.com/s/app/2018/com-www-bigalog/BBHZDWoQivVkyBJi84efg/static/images/noon-now-en.svg" alt="noon-now" class="jsx-2963792684 "/></div>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+  </div>
+</div>

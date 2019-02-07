@@ -1,0 +1,160 @@
+<div style=" background-color: #f7f7fa; padding-top: 180px; height: auto; display: inline-block; width: 100%; padding-bottom: 50px;">
+<div style="padding: 0 45px; max-width: 1350px; margin: 0 auto; ">
+  <div style="width: 30%; float: left;">
+    <h1 style="font-size: 18px;">Welcome buyer@iman.com</h1>
+    <%= link_to "Log out", destroy_user_session_path, method: :destroy %>
+    <br>
+    <br>
+    <hr style="color: #ccc;">
+    <br>
+    <ul style="font-size: 14px;">
+      <li class="account_menu_item active">
+        <i class="icon icon-notepad" style="background: #fff;"></i>
+        Active loans (<%= Loan.all.count %>)</li>
+      <li class="account_menu_item">
+        <i class="icon icon-book" style="background: #fff;"></i>
+        Purchases
+      </li>
+      <li class="account_menu_item">
+        <i class="icon icon-credit-card-o" style="background: #fff;"></i>
+        Orders
+      </li>
+      <li class="account_menu_item">
+        <i class="icon icon-coins" style="background: #fff;"></i>
+        Addresses
+      </li>
+      <li class="account_menu_item">
+        <i class="icon icon-returns" style="background: #fff;"></i>
+        Payment
+      </li>
+      <li class="account_menu_item">
+        <i class="icon icon-user" style="background: #fff;"></i>
+        Profile
+      </li>
+    </ul>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <button aria-label="Sign Out" class="jsx-452320352">Sign Out</button>
+  </div>
+  <div style="width: 70%; float: left;">
+    <div style=" margin: 0 50px; padding: 20px; background-color:#fff; height: auto; display: inline-block; width: 100%;">
+      <h1 style="font-size: 26px;">Active loans (<%= Loan.all.count %>)</h1>
+      <hr>
+      <br>
+      <div id="ex1" class="modal">
+        <form action="/accept_bid" method="post">
+        <input type="hidden" name="loan_id" id="loan_id">
+        <input type="hidden" name="bid_id" id="bid_id">
+        <h1 style="font-size: 18px; font-weight: bold;">Terms: </h1>
+        <br>
+        <table class="table table-bordered" style="width: 100%; height: 100%;">
+          <tr>
+            <th>Loan term</th>
+            <th>Loan APR</th>
+            <th>Montly payment</th>
+            <th>Total payment</th>
+          </tr>
+          <tr>
+            <td class='loan_term'></td>
+            <td class='loan_apr'></td>
+            <td class='monthly_payment'></td>
+            <td class='total_payment'></td>
+          </tr>
+        </table>
+        <br>
+        <div style="float: right;">
+          <button type="submit" class="btn btn-success">Accept</button>
+          <a href="#" rel="modal:close" class="btn btn-error">Decline</a>
+        </div>
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+        </form>
+
+      </div>
+        <% Loan.all.each do |loan| %>
+          <% product = loan.sellable_good %>
+            <div class="" style="width: 96% !important; float: left; border: 1px solid #ddd; padding: 2%;">
+              <div class="jsx- ">
+                  <p style="text-align: right;"><b>Status:</b> <%= loan.status %></p>
+                  <!-- <a class="product View" href="<%= sellable_good_path(product.id) %>"> -->
+                  <div class="jsx-2877948196 imageContainer" style="width: 10%; float: left; margin-top: -10px;">
+                    <div class="jsx-3461008014 container loaded" style="padding-bottom: 136.375%;">
+                      <div class="jsx-3461008014 mediaContainer">
+                        <%= image_tag product.sellable_good_images.first.url.url %>
+                      </div>
+                    </div>
+                  </div>
+                    <div class="jsx-2877948196 detailsContainer" style="float: left; width: 88%; margin-left: 10px; margin-top: -10px;">
+                      <p class="jsx-2877948196 brand"><%= product.firm %></p>
+                      <div class="jsx-2877948196 name" style="margin: 0px;">
+                        <div style="overflow: hidden;">
+                          <div><span><%= product.name %></span></div>
+                        </div>
+                      </div>
+                      <div class="jsx-2877948196 priceRow" style="margin-top: -20px;">
+                        <div class="jsx-2877948196 productPriceContainer">
+                          <p class="jsx-3273035461 productPrice "><span class="jsx-3273035461 sellingPrice">UZS <%= product.price %>0</span></p>
+                        </div>
+                      </div>
+                      <% loan_id = loan.id %>
+                      <% if loan.bid_id %>
+                        <a class='show_loans' href="#" data-loan-id="<%= loan_id %>" style="color: #3866df; font-size: 16px;">Show payment schedule</a>
+                      <% else %>
+                        <a class='show_loans' href="#" data-loan-id="<%= loan_id %>" style="color: #3866df; font-size: 16px;"><%= loan.bids.count %> pending applications</a>
+                      <% end %>
+                    </div>
+
+                    <div class="active_loans_table loan-<%= loan.id %>" style="width: 100%; height: 100%; display: none;">
+                      <% if loan.bid %>
+                        <% dataset = [(loan.sellable_good.price * loan.bid.percent/100 + loan.sellable_good.price).to_i] %>
+                        <% (loan.bid.months - 1).times do |t| %>
+                          <% dataset << (dataset.last - (loan.sellable_good.price * loan.bid.percent/100 + loan.sellable_good.price).to_i/(loan.bid.months - 1)) %>
+                        <% end %>
+                        <canvas class='myChart' width="400" height="100" data-dataset='<%= dataset %>'></canvas>
+                      <% else %>
+                      <table class="table table-bordered table-striped" style="width: 100%; height: 100%;">
+                        <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Loan rate</th>
+                          <th>Loan period</th>
+                          <th>Monthly payment</th>
+                          <th>Total payment</th>
+                          <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                          <% loan.bids.each_with_index do |bid, i| %>
+                            <% i += 1 %>
+                            <tr style="text-align: center;">
+                              <td><%= i %></td>
+                              <td><%= bid.percent %>%</td>
+                              <td><%= bid.months %> months</td>
+                              <td>UZS <%= (loan.sellable_good.price * bid.percent/100 + loan.sellable_good.price).to_i/bid.months %>.00 </td>
+                              <td>UZS <%= (loan.sellable_good.price * bid.percent/100 + loan.sellable_good.price).to_i %>.00</td>
+                              <td>
+                                <a href="#" data-total-payment="<%= (loan.sellable_good.price * bid.percent/100 + loan.sellable_good.price).to_i %>" data-monthly-payment="<%= (loan.sellable_good.price * bid.percent/100 + loan.sellable_good.price).to_i/bid.months %>" data-loan-apr="<%= bid.percent %>" style="color: #3866df;" class="modal_open" data-loan="<%= loan.id %>" data-bid="<%= bid.id %>" data-loan-term="<%= bid.months %>">Sign contract</a>
+                              </td>
+                            </tr>
+                          <% end %>
+                        </tbody>
+                      </table>
+                      <% end %>
+                    </div>
+                  <!-- </a> -->
+              </div>
+            </div>
+            <!-- <div style="width: 80%; overflow: hidden; padding: 0 1%;">
+              хуй пизда
+            </div> -->
+            <% end %>
+    </div>
+  </div>
+  <div clear="both"></div>
+
+</div>
+</div>
+</div>
